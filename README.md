@@ -70,3 +70,17 @@ Using README.Rmd allows you to dynamically generate content, such as
 tables, plots, or results, ensuring your documentation is always
 up-to-date. To keep README.md consistent, simply re-render README.Rmd
 when needed.
+
+## Vignettes
+
+To learn more about how to use the `BIO625HW3` package, check out the
+vignette:
+
+``` r
+browseVignettes("BIO625HW3")
+```
+
+## License
+
+This package is licensed under the MIT License. See the LICENSE file for
+details.

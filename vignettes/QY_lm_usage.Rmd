@@ -1,0 +1,60 @@
+---
+title: "Using QY_lm for Linear Regression"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Using QY_lm for Linear Regression}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+# Introduction
+The `QY_lm` function provides an alternative implementation of linear regression, 
+mimicking the functionality of the base R function `lm()`. This function is designed to
+be modular and serves as an educational tool to demonstrate the underlying principles 
+of linear regression. 
+
+In this vignette, we will demonstrate the usage of `QY_lm` and compare its performance 
+and accuracy against the base R `lm()` function using simulated data.
+
+
+```{r setup}
+library(BIO625HW3)
+```
+
+# Example Usage
+## Simulated Data
+The following code generates a dataset with 100 observations, where `x` and `y` are independent normally distributed random variables. We fit the model `y ~ x` using `QY_lm`.
+
+Let's create a small dataset and fit a model:
+
+```{r}
+set.seed(123)
+data <- data.frame(x = rnorm(100), y = rnorm(100))
+result <- QY_lm(data, y ~ x)
+print(result$coefficients)
+```
+
+#Compare the results of `QY_lm` with the base R `lm` function to ensure the correctness of the implementation.
+
+
+```{r}
+# Fit a linear model using QY_lm
+result <- QY_lm(data, y ~ x)
+print(result$coefficients)
+
+# Fit a linear model using lm
+base_result <- lm(y ~ x, data = data)
+print(coef(base_result))
+
+# Compare the results
+print(all.equal(result$coefficients, coef(base_result)))
+```
+
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+

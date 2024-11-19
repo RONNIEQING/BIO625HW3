@@ -1,10 +1,21 @@
-#' QY Linear Regression Model
+#' Fit a linear regression model
 #'
-#' @param data A data frame containing the dataset.
-#' @param formula A formula specifying the model (e.g., y ~ x1 + x2).
-#' @return A list containing regression results: coefficients, R-squared,
-#'         residual standard error, degrees of freedom, and more.
+#' QY_lm fits a linear regression model using ordinary least squares.
+#'
+#' @param data A data frame containing the variables in the model.
+#' @param formula A formula object describing the model (e.g., mpg ~ wt + hp).
+#'
+#' @return A list containing:
+#'   \item{coefficients}{The estimated coefficients.}
+#'   \item{R_squared}{The R-squared value of the model.}
+#'   \item{adj_R_squared}{The adjusted R-squared value.}
+#'   \item{residuals}{The residuals of the model.}
+#' @examples
+#' data(mtcars)
+#' result <- QY_lm(mtcars, mpg ~ wt + hp)
+#' print(result$coefficients)
 #' @export
+
 QY_lm <- function(data, formula) {
   # Parse formula and extract response and predictors
   mf <- model.frame(formula, data)
@@ -49,3 +60,4 @@ QY_lm <- function(data, formula) {
     RSE = RSE
   ))
 }
+
