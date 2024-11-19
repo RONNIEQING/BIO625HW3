@@ -50,7 +50,8 @@ This example demonstrates how to load your data and run a simple
 regression analysis using QY_lm.
 
 What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
+With README.Rmd, you can include R code chunks that automatically run
+and generate output, such as this example:
 
 ``` r
 summary(cars)
@@ -63,12 +64,7 @@ summary(cars)
 #>  Max.   :25.0   Max.   :120.00
 ```
 
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this.
-
-You can also embed plots, for example:
-
-<img src="man/figures/README-pressure-1.png" width="100%" />
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
+Using README.Rmd allows you to dynamically generate content, such as
+tables, plots, or results, ensuring your documentation is always
+up-to-date. To keep README.md consistent, simply re-render README.Rmd
+when needed.
