@@ -7,7 +7,9 @@
 <!-- badges: end -->
 
 The goal of BIO625HW3 is to provide a simple linear regression function
-QY_lm for analyzing datasets.
+QY_lm for analyzing datasets. This package implements a linear
+regression model (`QY_lm`) using ordinary least squares. It provides
+detailed outputs such as coefficients, R-squared, residuals, and more.
 
 ## Installation
 
